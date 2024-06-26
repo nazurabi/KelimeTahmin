@@ -77,7 +77,7 @@ namespace KelimeTahmin
                     Console.Clear();
                 }
             }
-
+            
             #endregion
 
             #region Seçimler ve Sonuçlar
@@ -87,7 +87,6 @@ namespace KelimeTahmin
             switch (hak)
             {
                 case 10:
-
                     for (int i = hak; i > 0; i--)
                     {
                         bool arananvarmi = false;
@@ -213,7 +212,6 @@ namespace KelimeTahmin
                             i++;
                             Console.ReadKey();
                         }
-
                         if (i == 1)
                         {
                             tahminedilebildimi = false;
@@ -256,7 +254,6 @@ namespace KelimeTahmin
                     break;
 
                 case 5:
-
                     for (int i = hak; i > 0; i--)
                     {
                         bool arananvarmi = false;
@@ -425,7 +422,6 @@ namespace KelimeTahmin
                     break;
 
                 case 3:
-
                     for (int i = hak; i > 0; i--)
                     {
                         bool arananvarmi = false;
@@ -529,7 +525,6 @@ namespace KelimeTahmin
                                     Console.ResetColor();
                                 }
                             }
-
                             for (int j = 0; j < kelime.Length; j++)
                             {
                                 if (kelime[j] == tahminedilen)
@@ -551,7 +546,6 @@ namespace KelimeTahmin
                             i++;
                             Console.ReadKey();
                         }
-
                         if (i == 1)
                         {
                             tahminedilebildimi = false;
@@ -592,7 +586,6 @@ namespace KelimeTahmin
                         }
                     }
                     break;
-
             }
             #endregion
         }
