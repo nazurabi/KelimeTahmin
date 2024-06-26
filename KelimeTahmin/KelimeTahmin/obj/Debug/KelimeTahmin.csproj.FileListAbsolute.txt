@@ -5,3 +5,10 @@ C:\Users\nazurabi\Documents\Uygulamalar-Applications\GitHuba Yüklemelik\KelimeT
 C:\Users\nazurabi\Documents\Uygulamalar-Applications\GitHuba Yüklemelik\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.csproj.CoreCompileInputs.cache
 C:\Users\nazurabi\Documents\Uygulamalar-Applications\GitHuba Yüklemelik\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.exe
 C:\Users\nazurabi\Documents\Uygulamalar-Applications\GitHuba Yüklemelik\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.pdb
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.csproj.AssemblyReference.cache
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.csproj.CoreCompileInputs.cache
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.exe
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\obj\Debug\KelimeTahmin.pdb
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\bin\Debug\KelimeTahmin.exe.config
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\bin\Debug\KelimeTahmin.exe
+C:\Users\nazurabi\Desktop\Yeni klasör\KelimeTahmin\KelimeTahmin\KelimeTahmin\bin\Debug\KelimeTahmin.pdb

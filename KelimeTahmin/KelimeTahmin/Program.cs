@@ -16,12 +16,10 @@ namespace KelimeTahmin
             Console.WriteLine("Kelime Tahmin Oyununa Hoşgeldiniz");
             Console.ResetColor();
             Console.WriteLine("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
-
             Console.Write("Lütfen tahmin edilecek kelimeyi giriniz ve enter tuşuna basınız= ");
             Console.ForegroundColor = ConsoleColor.Green;
             string kelime = Console.ReadLine(); // 1.Oyuncunun girdiği kelime
             char[] tahminedilecek = new char[kelime.Length];
-
             for (int i = 0; i < kelime.Length; i++) // 1.Oyuncunun girdiği kelimeyi sansürlüyoruz
             {
                 if (kelime[i] != ' ')
@@ -55,12 +53,11 @@ namespace KelimeTahmin
                 string zorluk = Console.ReadLine();
                 Console.ResetColor();
 
-                if (zorluk=="1")
+                if (zorluk == "1")
                 {
                     hak = 10;
                     break;
                 }
-            
                 else if (zorluk == "2")
                 {
                     hak = 5;
@@ -86,12 +83,14 @@ namespace KelimeTahmin
             #region Seçimler ve Sonuçlar
 
             bool tahminedilebildimi = true;
+            string yanlisharfler = "";
             switch (hak)
             {
                 case 10:
-    
+
                     for (int i = hak; i > 0; i--)
                     {
+                        bool arananvarmi = false;
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Kelime Tahmin Oyununa Hoşgeldiniz");
@@ -105,6 +104,11 @@ namespace KelimeTahmin
                         Console.WriteLine("");
                         Console.Write($"Tahmin Edilecek Kelime= ");
                         Console.WriteLine(tahminedilecek);// 1.Oyuncunun girdiği ve sansürleyerek char dizisi oluşturduğumuz kelime dizisini referans olması açısından sansürlenmiş şekilde tahmin edecek 2.Oyuncuya gösteriyoruz.
+                        Console.WriteLine("");
+                        Console.Write("Yanlış Tahmin Edilen Harfler=");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(yanlisharfler);
+                        Console.ResetColor();
                         Console.WriteLine("");
                         Console.WriteLine("Harf tahmin etme adımından çıkıp kelimenin tamamını tahmin etmek istiyor musunuz?");
                         Console.Write("Eğer kabul ederseniz kalan tahmin haklarınız kaybolacaktır. e/h= ");
@@ -122,6 +126,11 @@ namespace KelimeTahmin
                             Console.WriteLine("");
                             Console.Write($"Tahmin Edilecek Kelime= ");
                             Console.WriteLine(tahminedilecek);
+                            Console.WriteLine("");
+                            Console.Write("Yanlış Tahmin Edilen Harfler=");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(yanlisharfler);
+                            Console.ResetColor();
                             Console.WriteLine("");
                             Console.Write("Lütfen tahminde bulununuz eğer birden fazla kelimeden oluşuyorsa '/' işareti yerine boşluk tuşunu kullanınız= ");
                             Console.ForegroundColor = ConsoleColor.Green;
@@ -142,7 +151,7 @@ namespace KelimeTahmin
                                 break;
                             }
                         }
-                        else if(secenek=="h")
+                        else if (secenek == "h")
                         {
                             Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Blue;
@@ -157,6 +166,11 @@ namespace KelimeTahmin
                             Console.WriteLine("");
                             Console.Write($"Tahmin Edilecek Kelime= ");
                             Console.WriteLine(tahminedilecek);
+                            Console.WriteLine("");
+                            Console.Write("Yanlış Tahmin Edilen Harfler=");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(yanlisharfler);
+                            Console.ResetColor();
                             Console.WriteLine("");
                             Console.Write("Tahminde Bulunmak İstediğiniz Harfi/Rakamı Giriniz= ");
                             char tahminedilen = ' ';
@@ -183,7 +197,12 @@ namespace KelimeTahmin
                                 if (kelime[j] == tahminedilen)
                                 {
                                     tahminedilecek[j] = tahminedilen;// Sansürlü kelimeleri doğru tahmin edilen ile değiştirdiğimiz kod
+                                    arananvarmi = true;
                                 }
+                            }
+                            if (arananvarmi == false)
+                            {
+                                yanlisharfler += tahminedilen + ",";
                             }
                         }
                         else
@@ -195,12 +214,12 @@ namespace KelimeTahmin
                             Console.ReadKey();
                         }
 
-                        if (i==1)
+                        if (i == 1)
                         {
                             tahminedilebildimi = false;
                         }
                     }
-                    if (tahminedilebildimi==false)
+                    if (tahminedilebildimi == false)
                     {
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Blue;
@@ -211,6 +230,11 @@ namespace KelimeTahmin
                         Console.WriteLine("");
                         Console.Write($"Tahmin Edilecek Kelime= ");
                         Console.WriteLine(tahminedilecek);
+                        Console.WriteLine("");
+                        Console.Write("Yanlış Tahmin Edilen Harfler=");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(yanlisharfler);
+                        Console.ResetColor();
                         Console.WriteLine("");
                         Console.Write("Lütfen tahminde bulununuz eğer birden fazla kelimeden oluşuyorsa '/' işareti yerine boşluk tuşunu kullanınız= ");
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -235,6 +259,7 @@ namespace KelimeTahmin
 
                     for (int i = hak; i > 0; i--)
                     {
+                        bool arananvarmi = false;
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Kelime Tahmin Oyununa Hoşgeldiniz");
@@ -248,6 +273,11 @@ namespace KelimeTahmin
                         Console.WriteLine("");
                         Console.Write($"Tahmin Edilecek Kelime= ");
                         Console.WriteLine(tahminedilecek);// 1.Oyuncunun girdiği ve sansürleyerek char dizisi oluşturduğumuz kelime dizisini referans olması açısından sansürlenmiş şekilde tahmin edecek 2.Oyuncuya gösteriyoruz.
+                        Console.WriteLine("");
+                        Console.Write("Yanlış Tahmin Edilen Harfler=");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(yanlisharfler);
+                        Console.ResetColor();
                         Console.WriteLine("");
                         Console.WriteLine("Harf tahmin etme adımından çıkıp kelimenin tamamını tahmin etmek istiyor musunuz?");
                         Console.Write("Eğer kabul ederseniz kalan tahmin haklarınız kaybolacaktır. e/h= ");
@@ -265,6 +295,11 @@ namespace KelimeTahmin
                             Console.WriteLine("");
                             Console.Write($"Tahmin Edilecek Kelime= ");
                             Console.WriteLine(tahminedilecek);
+                            Console.WriteLine("");
+                            Console.Write("Yanlış Tahmin Edilen Harfler=");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(yanlisharfler);
+                            Console.ResetColor();
                             Console.WriteLine("");
                             Console.Write("Lütfen tahminde bulununuz eğer birden fazla kelimeden oluşuyorsa '/' işareti yerine boşluk tuşunu kullanınız= ");
                             Console.ForegroundColor = ConsoleColor.Green;
@@ -301,6 +336,11 @@ namespace KelimeTahmin
                             Console.Write($"Tahmin Edilecek Kelime= ");
                             Console.WriteLine(tahminedilecek);
                             Console.WriteLine("");
+                            Console.Write("Yanlış Tahmin Edilen Harfler=");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(yanlisharfler);
+                            Console.ResetColor();
+                            Console.WriteLine("");
                             Console.Write("Tahminde Bulunmak İstediğiniz Harfi/Rakamı Giriniz= ");
                             char tahminedilen = ' ';
                             while (true) // 2.Oyuncunun sadece 1 karakter girmiş olduğundan emin olmak için döngü kuruyoruz, istenilen şartı sağlamazsa sonsuz döngüye girip kod satırının devamına hiçbir şekilde geçemeyecek
@@ -326,7 +366,12 @@ namespace KelimeTahmin
                                 if (kelime[j] == tahminedilen)
                                 {
                                     tahminedilecek[j] = tahminedilen;// Sansürlü kelimeleri doğru tahmin edilen ile değiştirdiğimiz kod
+                                    arananvarmi = true;
                                 }
+                            }
+                            if (arananvarmi == false)
+                            {
+                                yanlisharfler += tahminedilen + ",";
                             }
                         }
                         else
@@ -355,6 +400,11 @@ namespace KelimeTahmin
                         Console.Write($"Tahmin Edilecek Kelime= ");
                         Console.WriteLine(tahminedilecek);
                         Console.WriteLine("");
+                        Console.Write("Yanlış Tahmin Edilen Harfler=");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(yanlisharfler);
+                        Console.ResetColor();
+                        Console.WriteLine("");
                         Console.Write("Lütfen tahminde bulununuz eğer birden fazla kelimeden oluşuyorsa '/' işareti yerine boşluk tuşunu kullanınız= ");
                         Console.ForegroundColor = ConsoleColor.Green;
                         string tamtahmin = Console.ReadLine();
@@ -378,6 +428,7 @@ namespace KelimeTahmin
 
                     for (int i = hak; i > 0; i--)
                     {
+                        bool arananvarmi = false;
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Kelime Tahmin Oyununa Hoşgeldiniz");
@@ -391,6 +442,11 @@ namespace KelimeTahmin
                         Console.WriteLine("");
                         Console.Write($"Tahmin Edilecek Kelime= ");
                         Console.WriteLine(tahminedilecek);// 1.Oyuncunun girdiği ve sansürleyerek char dizisi oluşturduğumuz kelime dizisini referans olması açısından sansürlenmiş şekilde tahmin edecek 2.Oyuncuya gösteriyoruz.
+                        Console.WriteLine("");
+                        Console.Write("Yanlış Tahmin Edilen Harfler=");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(yanlisharfler);
+                        Console.ResetColor();
                         Console.WriteLine("");
                         Console.WriteLine("Harf tahmin etme adımından çıkıp kelimenin tamamını tahmin etmek istiyor musunuz?");
                         Console.Write("Eğer kabul ederseniz kalan tahmin haklarınız kaybolacaktır. e/h= ");
@@ -408,6 +464,11 @@ namespace KelimeTahmin
                             Console.WriteLine("");
                             Console.Write($"Tahmin Edilecek Kelime= ");
                             Console.WriteLine(tahminedilecek);
+                            Console.WriteLine("");
+                            Console.Write("Yanlış Tahmin Edilen Harfler=");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(yanlisharfler);
+                            Console.ResetColor();
                             Console.WriteLine("");
                             Console.Write("Lütfen tahminde bulununuz eğer birden fazla kelimeden oluşuyorsa '/' işareti yerine boşluk tuşunu kullanınız= ");
                             Console.ForegroundColor = ConsoleColor.Green;
@@ -444,6 +505,11 @@ namespace KelimeTahmin
                             Console.Write($"Tahmin Edilecek Kelime= ");
                             Console.WriteLine(tahminedilecek);
                             Console.WriteLine("");
+                            Console.Write("Yanlış Tahmin Edilen Harfler=");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(yanlisharfler);
+                            Console.ResetColor();
+                            Console.WriteLine("");
                             Console.Write("Tahminde Bulunmak İstediğiniz Harfi/Rakamı Giriniz= ");
                             char tahminedilen = ' ';
                             while (true) // 2.Oyuncunun sadece 1 karakter girmiş olduğundan emin olmak için döngü kuruyoruz, istenilen şartı sağlamazsa sonsuz döngüye girip kod satırının devamına hiçbir şekilde geçemeyecek
@@ -469,7 +535,12 @@ namespace KelimeTahmin
                                 if (kelime[j] == tahminedilen)
                                 {
                                     tahminedilecek[j] = tahminedilen;// Sansürlü kelimeleri doğru tahmin edilen ile değiştirdiğimiz kod
+                                    arananvarmi = true;
                                 }
+                            }
+                            if (arananvarmi == false)
+                            {
+                                yanlisharfler += tahminedilen + ",";
                             }
                         }
                         else
@@ -497,6 +568,11 @@ namespace KelimeTahmin
                         Console.WriteLine("");
                         Console.Write($"Tahmin Edilecek Kelime= ");
                         Console.WriteLine(tahminedilecek);
+                        Console.WriteLine("");
+                        Console.Write("Yanlış Tahmin Edilen Harfler=");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(yanlisharfler);
+                        Console.ResetColor();
                         Console.WriteLine("");
                         Console.Write("Lütfen tahminde bulununuz eğer birden fazla kelimeden oluşuyorsa '/' işareti yerine boşluk tuşunu kullanınız= ");
                         Console.ForegroundColor = ConsoleColor.Green;
